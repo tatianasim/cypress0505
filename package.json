@@ -2,12 +2,12 @@
   "name": "cypress0505",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "cy:open": "npx cypress open",
+    "cy: run": "npx cypress run --spec cypress/integration/*.spec.js"
   },
   "keywords": [],
-  "author": "",
+  "author": "Tatiana Simonova",
   "license": "ISC",
   "devDependencies": {
     "cypress": "^9.6.0"
