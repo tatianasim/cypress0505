@@ -1,5 +1,6 @@
 describe('Auth', () => {
     it('Log in with valid credentials', () => {
+
         cy.intercept('POST', '/user/login')
             .as('login')
 
@@ -50,3 +51,4 @@ describe('Auth', () => {
     })
 })
 //
+>> main
