@@ -17,5 +17,7 @@
 import './commands'
 import 'cypress-xpath'
 
+Cypress.on("uncaught:exception", err => !err.message.includes("ResizeObserver"));
+
 // Alternatively you can use CommonJS syntax:
 // require('./commands')

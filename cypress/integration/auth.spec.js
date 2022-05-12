@@ -50,5 +50,4 @@ describe('Auth', () => {
             .should('have.text', 'Required')
     })
 })
-//
->> main
+
