@@ -28,17 +28,21 @@ describe('Auth', () => {
       .type('test')
       .clear()
 
-    cy.xpath('//div[contains(@class, "ant-col")][div//input[@id="normal_login_email"]]//div[@role="alert"]')
-      .should('have.text', 'Required')
+    cy.fixture('errors').then((errors) => {
+      cy.xpath('//div[contains(@class, "ant-col")][div//input[@id="normal_login_email"]]//div[@role="alert"]')
+        .should('have.text', errors.required)
+    })
   })
+
 
   it('Email incorrect validation', () => {
     cy.get('#normal_login_email')
       .type('test')
 
-
-    cy.xpath('//div[contains(@class, "ant-col")][div//input[@id="normal_login_email"]]//div[@role="alert"]')
-      .should('have.text', '\'email\' is not a valid email')
+    cy.fixture('errors').then((errors) => {
+      cy.xpath('//div[contains(@class, "ant-col")][div//input[@id="normal_login_email"]]//div[@role="alert"]')
+        .should('have.text', errors.email)
+    })
   })
 
   it('Password input field is required', () => {
@@ -46,8 +50,10 @@ describe('Auth', () => {
       .type('test')
       .clear()
 
-    cy.xpath('//div[contains(@class, "ant-col")][div//input[@id="normal_login_password"]]//div[@role="alert"]')
-      .should('have.text', 'Required')
+    cy.fixture('errors').then((errors) => {
+      cy.xpath('//div[contains(@class, "ant-col")][div//input[@id="normal_login_password"]]//div[@role="alert"]')
+        .should('have.text', errors.required)
+    })
   })
 })
 
